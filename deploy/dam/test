@@ -1,0 +1,30 @@
+curl -XPUT 'localhost:9200/dam'
+curl -XPOST 'localhost:9200/dam/_close'
+curl -XPUT 'localhost:9200/dam/_settings' -d @dam-settings.json 
+curl -XPUT 'localhost:9200/dam/_mapping/asset' -d @dam-mapping.json 
+curl -XPOST 'localhost:9200/dam/_open'
+#curl -XDELETE 'localhost:9200/dam/asset'
+
+
+
+GET /dam/asset/_search?pretty
+{
+  "query": {
+    "function_score": {
+      "query": {
+        "match_all": {}
+      },
+      "functions": [
+        {
+          "script_score": {
+            "params" : {
+            "req_date_stamp" : 1220227200,
+            "one_day":86400000
+           },
+            "script": "last_modified = doc['last_modified'].value;owner = doc['owner'].value;if (owner == 'andy') { return log((doc['last_modified'].value - req_date_stamp)/86400000 +1 ) };return log((doc['last_modified'].value - req_date_stamp)/86400000)"
+          }
+        }
+      ]
+    }
+  }
+}

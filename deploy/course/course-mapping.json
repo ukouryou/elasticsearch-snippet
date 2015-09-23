@@ -1,0 +1,41 @@
+{
+    "coursemeta": {
+        "properties": {
+            "name": {
+                "type": "string",
+                "store": true,
+                "analyzer": "smartcn",
+                "copy_to": "keyword"
+            },
+            "description": {
+                "type": "string",
+                "store": true,
+                "analyzer": "smartcn",
+                "copy_to": "keyword"
+            },
+            "tag": {
+                "type": "string",
+                "store": true,
+                "analyzer": "comma",
+                "copy_to": "keyword"
+            },
+            "owner": {
+                "type": "string",
+                "store": true,
+		"analyzer": "smartcn",
+                "copy_to": "keyword"
+            },
+            "authors": {
+                "type": "string",
+                "store": true
+            },
+            "keyword": {
+                "type": "string",
+                "store": false,
+                "analyzer": "smartcn"
+            }
+
+        }
+    }
+}
+

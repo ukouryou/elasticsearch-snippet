@@ -1,0 +1,35 @@
+{
+    "analysis": {
+        "tokenizer": {
+            "comma": {
+                "type": "pattern",
+                "pattern": ","
+            }
+        },
+        "analyzer": {
+            "smartcn": {
+                "filter": [
+                    "trim",
+                    "lowercase"
+                ],
+                "type": "smartcn",
+                "tokenizer": "smartcn_tokenizer"
+            },
+            "keyword": {
+                "filter": [
+                    "trim",
+                    "lowercase"
+                ],
+                "tokenizer": "keyword"
+            },
+            "comma": {
+                "type": "custom",
+                "tokenizer": "comma",
+                "filter": [
+                    "trim",
+                    "lowercase"
+                ]
+            }
+        }
+    }
+}
