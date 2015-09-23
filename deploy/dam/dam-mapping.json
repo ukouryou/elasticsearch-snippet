@@ -1,0 +1,34 @@
+{
+    "asset": {
+        "properties": {
+            "filename": {
+                "type": "string",
+                "store": true,
+                "analyzer": "smartcn",
+		"copy_to": "keyword"
+            },
+            "tag": {
+                "type": "string",
+                "store": true,
+                "analyzer": "comma",
+		"copy_to": "keyword"
+            },
+	    "owner": {
+                "type": "string",
+                "store": true,
+                "analyzer": "smartcn",
+                "copy_to": "keyword"
+            },
+	    "content_type": {
+                "type": "string",
+                "store": true,
+                "analyzer": "keyword"
+            },
+	    "keyword": {
+                "type": "string",
+                "store": false,
+                "analyzer": "smartcn"
+            }
+        }
+    }
+}

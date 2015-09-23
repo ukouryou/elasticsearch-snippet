@@ -1,0 +1,12 @@
+== Install ElasticSearch
+
+. run [__install-elasticsearch.sh__]
+
+== Procedure of deploy
+ 
+ prerequisite: installed elasticsarch
+
+. install elasticsearch plugin [__install-plugin.sh__]
+. create index [__createIndex.py__]
+. copy elasticsearch-jdbc scripts [__prepare-es-jdbc-script.sh__]
+
