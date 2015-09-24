@@ -1,5 +1,5 @@
 #!/bin/sh
-CRIPT="$0"
+SCRIPT="$0"
 ES_JDBC_HOME=`dirname "$SCRIPT"`/..
 ES_JDBC_HOME=`cd "$ES_JDBC_HOME"; pwd`
 bin=${ES_JDBC_HOME}/bin
